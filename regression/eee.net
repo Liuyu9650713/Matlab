@@ -1,0 +1,17 @@
+
+
+%This Programm is written by Lxy on 2015/09/13
+
+ species:
+     N  stochastic  0.00001;
+     C  stochastic  0.00001;
+ parameters:
+     alpha  "\alpha" =0.0307;
+     lambda  "\lambda" =0.0115;
+     eta  "\eta"  =0.247e-4;
+     r            =0.0026;
+ reactions:
+     rate=alpha;     {N,C}>{N+1,C+1};
+     rate=lambda*N;   {N,C}>{N+1,C+1};
+     rate=eta*N*C; {N}>{N-1};
+     rate=r*C;     {C}>{C-1};
